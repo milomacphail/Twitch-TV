@@ -10,20 +10,19 @@ function allStreamCall(streamchannel) {
     
     
     
-    
     $.getJSON(streamchannel_url,function(data){
         if(data.status == '404'){
-            game=data.message;
+            game = " ";
             status = 'offline';
-            statusdesc = "";
+            statusdesc = "offline";
         } else if(data.status =='422') {
-            game = data.message;
+            game = " ";
             status="offline";
-            statusdesc="";
+            statusdesc="offline";
         } else {
             data=data.stream;
             if(data===null){
-                game ="offline";
+                game = " ";
                 status="offline";
                 statusdesc = "";
                 logo = "";
@@ -41,13 +40,13 @@ function allStreamCall(streamchannel) {
         if(data.status=='404') {
             name=streamchannel;
             channel_link='#';
-            logo="open logo"
+            logo= data.logo;
         } else if(data.status=='422') {
             name=streamchannel;
             channel=link="#";
-            logo="open logo"
+            logo= data.logo;
         } else if(logo===null){
-            logo="open logo"
+            logo="http://buildingscholars.utep.edu/web/images/no_avatar_m.png";
         } 
         
         var result = "\
