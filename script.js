@@ -39,14 +39,14 @@ function allStreamCall(streamchannel) {
         channel_link = data.url;
         if(data.status=='404') {
             name=streamchannel;
-            channel_link='#';
+            channel_link=data.url;
             logo= data.logo;
         } else if(data.status=='422') {
             name=streamchannel;
-            channel=link="#";
+            channel_link: data.url;
             logo= data.logo;
         } else if(logo===null){
-            logo="http://buildingscholars.utep.edu/web/images/no_avatar_m.png";
+            logo="http://buildingscholars.utep.edu/web/images/no_avatar_m.png"
         } 
         
         var result = "\
